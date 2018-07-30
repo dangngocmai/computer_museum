@@ -116,513 +116,591 @@ h1{text-align: center;
       The thickness of the items are: <br> <span id="thickness"> </span>
 
 <script>
-function UnitConverter(valNum) {
-
-     var fromitem = document.getElementById("fromitems").value;  
-    var toitem = document.getElementById("toitems").value;
-    
- var converted  = document.getElementById("output").innerHTML;
-         var thickness = document.getElementById("thickness").innerHTML;
-   if(fromitem == toitem){
-       document.getElementbyId("output").innerHTML = valNum;
-       
-   }
-    
-      else if (fromitem == "Punched card" && toitem == "3.5 floppy disk") {
-                converted =valNum /(1.4 *1000000 /80) ;
-          document.getElementById("output").innerHTML = converted;
-         document.getElementById("thickness").innerHTML =converted*0.177852;
-}
-    
-     else if (fromitem == "Punched card" && toitem == "5.25 floppy disk single-sided, single-density") {
-  converted=valNum /(360 *1000 /80) ;
-      
-    document.getElementById("output").innerHTML = converted;
-          document.getElementById("thickness").innerHTML=converted*0.177852;
-}
-    
- else if (fromitem == "Punched card" && toitem == "5.25 floppy disk single-sided, double-density") {
-  converted=valNum /(600 *1000 /80) ;
-      document.getElementById("output").innerHTML = converted;
-          document.getElementById("thickness").innerHTML=converted*0.177852;
-}
-    
-     else if (fromitem == "Punched card" && toitem == "5.25 floppy disk double-sided, double-density") {
-  converted=valNum /(1.2*1000000 /80) ;
-         document.getElementById("output").innerHTML = converted;
-          document.getElementById("thickness").innerHTML=converted*0.177852;
-}
-    
-      else if (fromitem == "Punched card" && toitem == "1650 bpi 9-track tape") {
-  converted=valNum /(46 *1000  /80) ;
-          document.getElementById("output").innerHTML = converted;
-          document.getElementById("thickness").innerHTML=converted*0.177852;
-}
-    
-    
-                        else if (fromitem == "Punched card" && toitem == "6250 bpi 9-track tape") {
-  converted=valNum /(180000 *1000  /80) ;
-                         document.getElementById("output").innerHTML = converted;
-          document.getElementById("thickness").innerHTML=converted*0.177852;
-}
-    
-    
-          else if (fromitem == "Punched card" && toitem == "5 MB hard Winchester Hard Drive") {
-  converted=valNum /(180000 /80) ;
-                document.getElementById("output").innerHTML = converted;
-          document.getElementById("thickness").innerHTML=converted*0.177852;
-}
-    
-           else if (fromitem == "Punched card" && toitem == "Paper tape") {
-  converted=valNum /(180000 *1000  /80) ;
-                document.getElementById("output").innerHTML = converted;
-          document.getElementById("thickness").innerHTML=converted*0.177852;
-}
-                        else if (fromitem == "Punched card" && toitem == "IBM Data Cell") {
-  converted=valNum /(3 *10^9  /80) ; 
-                       document.getElementById("output").innerHTML = converted;
-          document.getElementById("thickness").innerHTML=converted*0.177852;}
-
-    
-    
-    
-     else if (fromitem == "3.5 floppy disk" && toitem == "Punched card") {
-  converted=valNum / (80/ (1.14*10^6));
- document.getElementById("output").innerHTML = converted;
-          document.getElementById("thickness").innerHTML=converted*3.3;}
- else if (fromitem == "3.5 floppy disk" && toitem == "5.25 floppy disk single-sided, single-density") {
-  converted=valNum / (360 *1000/ (1.14*10^6));
- document.getElementById("output").innerHTML = converted;
-          document.getElementById("thickness").innerHTML=converted*3.3;}
-      else if (fromitem == "3.5 floppy disk" && toitem == "5.25 floppy disk single-sided, double-density") {
-  converted=valNum / (600 *1000/ (1.14*10^6));
- document.getElementById("output").innerHTML = converted;
-          document.getElementById("thickness").innerHTML=converted*3.3;}
-     else if (fromitem == "3.5 floppy disk" && toitem == "5.25 floppy disk double-sided, double-density") {
-  converted=valNum / (1.2*1000000/ (1.14*10^6));
-         
- document.getElementById("output").innerHTML = converted;
-          document.getElementById("thickness").innerHTML=converted*3.3;}
-        else if (fromitem == "3.5 floppy disk" && toitem == "5 MB hard Winchester Hard Drive") {
-  converted=valNum / (600 *1000/ (1.14*10^6));
-            
-document.getElementById("output").innerHTML = converted;
-          document.getElementById("thickness").innerHTML=converted*3.3;} 
-       else if (fromitem == "3.5 floppy disk" && toitem == "1650 bpi 9-track tape") {
-  converted=valNum / (46 *1000/ (1.14*10^6));
-            
-document.getElementById("output").innerHTML = converted;
-          document.getElementById("thickness").innerHTML=converted*3.3;} 
-            else if (fromitem == "3.5 floppy disk" && toitem == "6250 bpi 9-track tape") {
-  converted=valNum / (180000 *1000/ (1.14*10^6));
-            
-document.getElementById("output").innerHTML = converted;
-          document.getElementById("thickness").innerHTML=converted*3.3;}     
-    
-            else if (fromitem == "3.5 floppy disk" && toitem == "Paper tape") {
-  converted=valNum / (180 *10^6 /(1.14*10^6));
-            
-document.getElementById("output").innerHTML = converted;
-          document.getElementById("thickness").innerHTML=converted*3.3;}     
-              else if (fromitem == "3.5 floppy disk" && toitem == "IBM Data Cell") {
-  converted=valNum / (3 *10^9 /(1.14*10^6));
-            
- document.getElementById("output").innerHTML = converted;
-          document.getElementById("thickness").innerHTML=converted*3.3;}    
-    
-    
-    
-     else if (fromitem == "5.25 floppy disk single-sided, single-density" && toitem == "Punched card") {
-  converted=valNum / (80/ (36*10^3));
-                  document.getElementById("output").innerHTML = converted;
-          document.getElementById("thickness").innerHTML=converted*1.6;
-}    
-    
-     else if (fromitem == "5.25 floppy disk single-sided, single-density" && toitem == "3.5 floppy disk") {
-  converted=valNum / (1.14*10^6 / (36*10^3));
-                document.getElementById("output").innerHTML = converted;          
-         document.getElementById("thickness").innerHTML=converted*1.6;
-                    
-}    
-     else if (fromitem == "5.25 floppy disk single-sided, single-density" && toitem == "5.25 floppy disk single-sided, double-density") {
-  converted=valNum / (360 *1000/ (36*10^3));
-                document.getElementById("output").innerHTML = converted;           
-         document.getElementById("thickness").innerHTML=converted*1.6;
-                    
-         
-}   
- 
-           else if (fromitem == "5.25 floppy disk single-sided, single-density" && toitem == "5.25 floppy disk double-sided, double-density") {
-  converted=valNum /( 600 *1000 /(36*10^3));
-             document.getElementById("output").innerHTML = converted;        
-               document.getElementById("thickness").innerHTML=converted*1.6;              
-}   
-      
-           else if (fromitem == "5.25 floppy disk single-sided, single-density" && toitem == "5 MB hard Winchester Hard Drive") {
-  converted=valNum /(5 *10^6 /(36*10^3));
-               
-                    document.getElementById("output").innerHTML = converted;        
-               document.getElementById("thickness").innerHTML=converted*1.6;       
-}   
-         else if (fromitem == "5.25 floppy disk single-sided, single-density" && toitem == "1650 bpi 9-track tape") {
-  converted=valNum /(46 *10^6 /(36*10^3));
-                      document.getElementById("output").innerHTML = converted;     
-             document.getElementById("thickness").innerHTML=converted*1.6;     
-}   
-          else if (fromitem == "5.25 floppy disk single-sided, single-density" && toitem == "6250 bpi 9-track tape") {
-  converted=valNum /(46 *10^6 /(36*10^3));
-                       document.getElementById("output").innerHTML = converted;     
-              document.getElementById("thickness").innerHTML=converted*1.6;    
-}  
-     else if(fromitem == "5.25 floppy disk single-sided, single-density" && toitem == "Paper tape") {
-       document.getElementById("output").innerHTML = converted;      
-         document.getElementById("thickness").innerHTML=converted*1.6;
-       converted = valNum/ ( 180 *10^6 /(36 *10^3));
-                }
-    
-        else if(fromitem == "5.25 floppy disk single-sided, single-density" && toitem == "IBM Data Cell") {
-       document.getElementById("output").innerHTML = converted;        
-            document.getElementById("thickness").innerHTML=converted*1.6;
-       converted = valNum/ (3 *10^9 /(36 *10^3)) ;
-              }
-    
-    
-    
-              else if (fromitem == "5.25 floppy disk single-sided, double-density" && toitem == "Punched card") {
-  converted=valNum / (80/ (600 *1000));
-                  document.getElementById("output").innerHTML = converted;     
-                  document.getElementById("thickness").innerHTML=converted*1.6; 
-}    
-    
-       else if (fromitem == "5.25 floppy disk single-sided, double-density" && toitem == "3.5 floppy disk") {
-  converted=valNum / (1.14*10^6 / (600 *1000));
-                   document.getElementById("output").innerHTML = converted;      
-           document.getElementById("thickness").innerHTML=converted*1.6;
-}    
-       else if (fromitem == "5.25 floppy disk single-sided, double-density" && toitem == "5.25 floppy disk single-sided, single-density") {
-  converted=valNum / (360 *1000/ (600 *1000));
-                   document.getElementById("output").innerHTML = converted;     
-           document.getElementById("thickness").innerHTML=converted*1.6;
-}    
-       else if (fromitem == "5.25 floppy disk single-sided, double-density" && toitem == "5.25 floppy disk double-sided, double-density") {
-  converted=valNum / (36*10^3  /(600 *1000));
-                           document.getElementById("output").innerHTML = converted;       
-           document.getElementById("thickness").innerHTML=converted*1.6;
-}    
-    else if (fromitem == "5.25 floppy disk single-sided, double-density" && toitem == "5 MB hard Winchester Hard Drive") {
-  converted=valNum / (5 *10^6 /(600 *1000));
-                           document.getElementById("output").innerHTML = converted;     
-        document.getElementById("thickness").innerHTML=converted*1.6;
-}    
-     else if (fromitem == "5.25 floppy disk single-sided, double-density" && toitem == "1650 bpi 9-track tape") {
-  converted=valNum / (46 *10^6 /(600 *1000));
-                           document.getElementById("output").innerHTML = converted;      
-         document.getElementById("thickness").innerHTML=converted*1.6;
-}    
-     else if (fromitem == "5.25 floppy disk single-sided, double-density" && toitem == "6250 bpi 9-track tape") {
-  converted=valNum / (46 *10^6 /(600 *1000));
-                           document.getElementById("output").innerHTML = converted;     
-         document.getElementById("thickness").innerHTML=converted*1.6;
-}    
-     else if (fromitem == "5.25 floppy disk single-sided, double-density" && toitem == "Paper tape") {
-  converted=valNum / (180 *10^6 /(600 *1000));
-                           document.getElementById("output").innerHTML = converted;   
-         document.getElementById("thickness").innerHTML=converted*1.6;
-}    
-         else if (fromitem == "5.25 floppy disk single-sided, double-density" && toitem == "IBM Data Cell") {
-  converted=valNum / (3 *10^9 /(600 *1000));
-                           document.getElementById("output").innerHTML = converted;     
-             document.getElementById("thickness").innerHTML=converted*1.6;
-}    
-    
-       else if (fromitem == "5.25 floppy disk double-sided, double-density" && toitem == "IBM Data Cell") {
-  converted=valNum / (3 *10^9 /(1.2 *10^6));
-                document.getElementById("output").innerHTML = converted;      
-           document.getElementById("thickness").innerHTML=converted*1.6;           
-}      
-           else if (fromitem == "5.25 floppy disk double-sided, double-density" && toitem == "Paper tape") {
-  converted=valNum / (180 *10^6 /(1.2 *10^6));
-                      document.getElementById("output").innerHTML = converted;  
-               document.getElementById("thickness").innerHTML=converted*1.6;
-           }
-    
-     else if (fromitem == "5.25 floppy disk double-sided, double-density" && toitem == "6250 bpi 9-track tape") {
-  converted=valNum / (180 *10^6 /(1.2 *10^6));
-            document.getElementById("output").innerHTML = converted;       
-         document.getElementById("thickness").innerHTML=converted*1.6;}
-    
- 
-       else if (fromitem == "5.25 floppy disk double-sided, double-density" && toitem == "1650 bpi 9-track tape") {
-  converted=valNum /( 46 *10^6 /(1.2 *10^6));
-                  document.getElementById("output").innerHTML = converted;      
-           document.getElementById("thickness").innerHTML=converted*1.6;
-                    
-} 
-           else if (fromitem == "5.25 floppy disk double-sided, double-density" && toitem == "5 MB hard Winchester Hard Drive") {
-  converted=valNum /(5 *10^6 /(1.2 *10^6));
-                      document.getElementById("output").innerHTML = converted;    
-               document.getElementById("thickness").innerHTML=converted*1.6;
-                    
-               
-} 
-   else if (fromitem == "5.25 floppy disk double-sided, double-density" && toitem == "3.5 floppy disk") {
-  converted=valNum /(1.14*10^6 / (1.2 *10^6));
-                           document.getElementById("output").innerHTML = converted;      
-       document.getElementById("thickness").innerHTML=converted*1.6;
-} 
-    
-                  else if (fromitem == "5.25 floppy disk double-sided, double-density" && toitem == "Punched card") {
-  converted=valNum /(80/ (1.2 *10^6));
-                             document.getElementById("output").innerHTML = converted;     
-                      document.getElementById("thickness").innerHTML=converted*1.6;
-                    
-} 
-                     else if (fromitem == "5.25 floppy disk double-sided, double-density" && toitem == "5.25 floppy disk single-sided, single-density") {
-  converted=valNum /(360 *1000/ (1.2 *10^6));
-                            document.getElementById("output").innerHTML = converted;      
-                         document.getElementById("thickness").innerHTML=converted*1.6;} 
-    
-               else if (fromitem == "5.25 floppy disk double-sided, double-density" && toitem == "5.25 floppy disk single-sided, double-density") {
-                   converted=valNum /(600 *1000 /(1.2 *10^6));
-                      document.getElementById("output").innerHTML = converted;    
-                   document.getElementById("thickness").innerHTML=converted*1.6;} 
-     
-
-    
- 
-      else if (fromitem == "IBM Data Cell" && toitem == "5.25 floppy disk single-sided, double-density") {
-                   converted=valNum /(600 *1000 /(3 *10^9));
-         document.getElementById("output").innerHTML = converted;                        document.getElementById("thickness").innerHTML=converted*0.127;} 
-     
-           else if (fromitem == "IBM Data Cell" && toitem == "Punched card") {
-                   converted=valNum /(80/ (3 *10^9));
-              document.getElementById("output").innerHTML = converted;                        document.getElementById("thickness").innerHTML=converted*0.127;} 
-    
-       else if (fromitem == "IBM Data Cell" && toitem == "3.5 floppy disk") {
-                   converted=valNum /(1.14*10^6 / (3 *10^9));
-       document.getElementById("output").innerHTML = converted;                        document.getElementById("thickness").innerHTML=converted*0.127;   } 
-    
-      else if (fromitem == "IBM Data Cell" && toitem == "5.25 floppy disk single-sided, single-density") {
-                   converted=valNum /(360 *1000/ (3 *10^9));
-         document.getElementById("output").innerHTML = converted;                        document.getElementById("thickness").innerHTML=converted*0.127;} 
-    
-    else if (fromitem == "IBM Data Cell" && toitem == "5.25 floppy disk double-sided, double-density") {
-                   converted=valNum /(1.2 *10^6 /(3 *10^9));
-       document.getElementById("output").innerHTML = converted;                        document.getElementById("thickness").innerHTML=converted*0.127;} 
-    
-        
-    else if (fromitem == "IBM Data Cell" && toitem == "5.25 floppy disk single-sided, double-density") {
-                   converted=valNum /( 600 *1000 /(3 *10^9));
-       document.getElementById("output").innerHTML = converted;                        document.getElementById("thickness").innerHTML=converted*0.127;} 
-    
-     else if (fromitem == "IBM Data Cell" && toitem == "1650 bpi 9-track tape") {
-                   converted=valNum /(46 *10^6 /(3 *10^9));
-        document.getElementById("output").innerHTML = converted;                        document.getElementById("thickness").innerHTML=converted*0.127;} 
-    
-
-     else if(fromitem == "IBM Data Cell" && toitem == "6250 bpi 9-track tape") {
-
-       converted = valNum /(180 *10^6 /(3 *10^9));
-          document.getElementById("output").innerHTML = converted;                        document.getElementById("thickness").innerHTML=converted*0.127; }
-    
-          else if (fromitem == "IBM Data Cell" && toitem == "5 MB hard Winchester Hard Drive") {
-  converted=valNum /(5 *10^6 /(3 *10^9));
-                    
-   document.getElementById("output").innerHTML = converted;                        document.getElementById("thickness").innerHTML=converted*0.127;} 
-    
-               else if (fromitem == "IBM Data Cell" && toitem == "Paper tape") {
-  converted=valNum / ( 180 *10^6 /(3 *10^9));
-           }
   
-    
-    
-      else if (fromitem == "Paper tape" && toitem == "Punched card") {
-  converted=valNum / ( 80/ (180 *10^6));
-         document.getElementById("output").innerHTML = converted;    
-                   document.getElementById("thickness").innerHTML=converted*0.1;   }
-    else if (fromitem == "Paper tape" && toitem == "3.5 floppy disk") {
-  converted=valNum / ( 1.14*10^6 / (180 *10^6));
-                document.getElementById("output").innerHTML = converted;    
-                   document.getElementById("thickness").innerHTML=converted*0.1;}
-        else if (fromitem == "Paper tape" && toitem == "5.25 floppy disk single-sided, single-density") {
-  converted=valNum / (360 *1000/ (180 *10^6));
-              document.getElementById("output").innerHTML = converted;    
-                   document.getElementById("thickness").innerHTML=converted*0.1;  }
-  else if (fromitem == "Paper tape" && toitem == "5.25 floppy disk single-sided, double-density") {
-  converted=valNum / (600 *1000 /(180 *10^6));
-               document.getElementById("output").innerHTML = converted;    
-                   document.getElementById("thickness").innerHTML=converted*0.1; }
-    
-     else if (fromitem == "Paper tape" && toitem == "5.25 floppy disk double-sided, double-density") {
-  converted=valNum / (1.2 *10^6 /(180 *10^6));
-            document.getElementById("output").innerHTML = converted;    
-                   document.getElementById("thickness").innerHTML=converted*0.1;    }
-    
-      else if (fromitem == "Paper tape" && toitem == "1650 bpi 9-track tape") {
-  converted=valNum / (46 *10^6 /(180 *10^6));
-            document.getElementById("output").innerHTML = converted;    
-                   document.getElementById("thickness").innerHTML=converted*0.1;    }
-     
-      else if (fromitem == "Paper tape" && toitem == "6250 bpi 9-track tape") {
-  converted=valNum / (180 *10^6 /(180 *10^6)); 
-           document.getElementById("output").innerHTML = converted;    
-                   document.getElementById("thickness").innerHTML=converted*0.1;}
-    
-     else if (fromitem == "Paper tape" && toitem == "5 MB hard Winchester Hard Drive") {
-  converted=valNum / (5 *10^6/(180 *10^6)); 
-          document.getElementById("output").innerHTML = converted;    
-                   document.getElementById("thickness").innerHTML=converted*0.1;}
-    
-         else if (fromitem == "Paper tape" && toitem == "IBM Data Cell") {
-  converted=valNum / (3 *10^9 /(180 *10^6));
-            document.getElementById("output").innerHTML = converted;    
-                   document.getElementById("thickness").innerHTML=converted*0.1;    }
-    
-    
-    
-      else if (fromitem == "6250 bpi 9-track tape" && toitem == "Punched card") {
-  converted=valNum / ( 80/ (180 *10^6));
-             document.getElementById("output").innerHTML = converted;    
-                   document.getElementById("thickness").innerHTML=converted*12.7;   }
-    else if (fromitem == "6250 bpi 9-track tape" && toitem == "3.5 floppy disk") {
-  converted=valNum / ( 1.14*10^6 / (180 *10^6));
-             document.getElementById("output").innerHTML = converted;    
-                   document.getElementById("thickness").innerHTML=converted*12.7;   }
-    
-        else if (fromitem == "6250 bpi 9-track tape" && toitem == "5.25 floppy disk single-sided, single-density") {
-  converted=valNum / (360 *1000/ (180 *10^6));
-             document.getElementById("output").innerHTML = converted;    
-                   document.getElementById("thickness").innerHTML=converted*12.7;   }
-  else if (fromitem == "6250 bpi 9-track tape" && toitem == "5.25 floppy disk single-sided, double-density") {
-  converted=valNum / (600 *1000 /(180 *10^6));
-             document.getElementById("output").innerHTML = converted;    
-                   document.getElementById("thickness").innerHTML=converted*12.7;   }
-    
-     else if (fromitem == "6250 bpi 9-track tape" && toitem == "5.25 floppy disk double-sided, double-density") {
-  converted=valNum / (1.2 *10^6 /(180 *10^6));
-            document.getElementById("output").innerHTML = converted;    
-                   document.getElementById("thickness").innerHTML=converted*12.7;    }
-    
-      else if (fromitem == "6250 bpi 9-track tape" && toitem == "1650 bpi 9-track tape") {
-  converted=valNum / (46 *10^6 /(180 *10^6));
-            document.getElementById("output").innerHTML = converted;    
-                   document.getElementById("thickness").innerHTML=converted*12.7;    }
-     
-      else if (fromitem == "6250 bpi 9-track tape" && toitem == "6250 bpi 9-track tape") {
-  converted=valNum / (180 *10^6 /(180 *10^6));
-          document.getElementById("output").innerHTML = converted;    
-                   document.getElementById("thickness").innerHTML=converted*12.7; }
-    
-     else if (fromitem == "6250 bpi 9-track tape" && toitem == "5 MB hard Winchester Hard Drive") {
-  converted=valNum / (5 *10^6/(180 *10^6)); 
-         document.getElementById("output").innerHTML = converted;    
-                   document.getElementById("thickness").innerHTML=converted*12.7; }
-    
-         else if (fromitem == "6250 bpi 9-track tape" && toitem == "IBM Data Cell") {
-  converted=valNum / (3 *10^9 /(180 *10^6));
-            document.getElementById("output").innerHTML = converted;    
-                   document.getElementById("thickness").innerHTML=converted*12.7;    }
-    
-    
-     else if (fromitem == "5 MB hard Winchester Hard Drive" && toitem == "5.25 floppy disk single-sided, double-density") {
-                   converted=valNum /(600 *1000/ (5 *10^6));
-         document.getElementById("output").innerHTML = converted;    
-                   document.getElementById("thickness").innerHTML=converted*12.7; } 
-    
-               
-     else if (fromitem == "5 MB hard Winchester Hard Drive" && toitem == "5.25 floppy disk single-sided, single-density") {
-                   converted=valNum /(360 *1000/ (5 *10^6));
-         document.getElementById("output").innerHTML = converted;    
-                   document.getElementById("thickness").innerHTML=converted*12.7; } 
-    
-    
-     else if (fromitem == "5 MB hard Winchester Hard Drive" && toitem == "5.25 floppy disk double-sided, double-density") {
-                   converted=valNum /(1.2 *1000000/ (5 *10^6));
-         document.getElementById("output").innerHTML = converted;    
-                   document.getElementById("thickness").innerHTML=converted*12.7; } 
-    
-     
-     else if (fromitem == "5 MB hard Winchester Hard Drive" && toitem == "1650 bpi 9-track tape") {
-                   converted=valNum /(46 *1000000/ (5 *10^6));
-         document.getElementById("output").innerHTML = converted;    
-                   document.getElementById("thickness").innerHTML=converted*12.7; } 
-    
-     else if (fromitem == "5 MB hard Winchester Hard Drive" && toitem == "6250 bpi 9-track tape") {
-                   converted=valNum /(1.8 *1000000/ (5 *10^6));
-         document.getElementById("output").innerHTML = converted;    
-                   document.getElementById("thickness").innerHTML=converted*12.7; } 
-    
-    
-     else if (fromitem == "5 MB hard Winchester Hard Drive" && toitem == "Paper tape") {
-                   converted=valNum /(180 *10^6 /(3 *10^9));
-         document.getElementById("output").innerHTML = converted;    
-                   document.getElementById("thickness").innerHTML=converted*12.7; } 
-    
-         else if (fromitem == "5 MB hard Winchester Hard Drive" && toitem == "IBM Data Cell") {
-                   converted=valNum /(3 *10^9 /(5 *10^6));
-             document.getElementById("output").innerHTML = converted;    
-                   document.getElementById("thickness").innerHTML=converted*12.7; } 
-    
-         else if (fromitem == "5 MB hard Winchester Hard Drive" && toitem == "Punched card") {
-                   converted=valNum /(80/ (5 *10^6));
-             document.getElementById("output").innerHTML = converted;    
-                   document.getElementById("thickness").innerHTML=converted*12.7; } 
+        function UnitConverter(valNum) {
+var fromitem = document.getElementById("fromitems").value;
+            var toitem = document.getElementById("toitems").value;
+var total =0;
+       
+           var thickness;
+            var converted;
+            
+            
+            // punched card
+   if (fromitem=="Punched card") {
 
-    else if (fromitem == "5 MB hard Winchester Hard Drive" && toitem == "3.5 floppy disk") {
-                   converted=valNum /(1.14*10^6 / (5 *10^6));
-        document.getElementById("output").innerHTML = converted;    
-                   document.getElementById("thickness").innerHTML=converted*12.7; } 
+         total = valNum*80;
+           if(toitem=="3.5 floppy disk") {
+                      
+            converted =total/1400000;
+          thickness =converted *3.3;
+        }
     
+       
+       else if(toitem=="Punched card") {
+           converted = total/80;
+         thickness=converted*0.177852;
+        }
+     
+        else if(toitem=="5.25 floppy disk single-sided, single-density") {
+           converted = total/360000;
+         thickness =converted*1.6;
+        }
     
+        else if(toitem=="5.25 floppy disk single-sided, double-density") {
+           converted = total/600000;
+          thickness =converted*1.6;
+        }
+       else if(toitem=="5.25 floppy disk double-sided, double-density") {
+           converted = total/1200000;
+         thickness =converted*1.6;
+        }
+    
+      else if(toitem=="6250 bpi 9-track tape") {
+           converted = total/180000000;
+         thickness =converted*12.7;
+        }
+         else if(toitem=="1650 bpi 9-track tape") {
+           converted = total/46000000;
+         thickness =converted*12.7;
+        }
+          else if(toitem=="5 MB hard Winchester Hard Drive") {
+           converted = total/5000000;
+         thickness =converted*5;
+        }
+    
+         else if(toitem=="Paper tape") {
+           converted = total/1200000;
+         thickness =converted*0.1;
+        }
+    
+          else if(toitem=="IBM data cell") {
+           converted = total/3000000000;
+         thickness =converted*0.127;
+        }
+  
+ 
+   }
+            
+            //3.5 floppy disk
+            
+              if (fromitem=="3.5 floppy disk") {
 
-       else if (fromitem == "1650 bpi 9-track tape" && toitem == "Punched card") {
-                   converted=valNum /( 80/ (46 *10^6));
-           document.getElementById("output").innerHTML = converted;    
-                   document.getElementById("thickness").innerHTML=converted*12.7; } 
-       else if (fromitem == "1650 bpi 9-track tape" && toitem == "3.5 floppy disk") {
-                   converted=valNum /( 1.14*10^6 / (46 *10^6));
-           document.getElementById("output").innerHTML = converted;    
-                   document.getElementById("thickness").innerHTML=converted*12.7; } 
+         total = valNum*1400000;
+           if(toitem=="3.5 floppy disk") {
+                      
+           converted =total/1400000;
+          thickness =converted *3.3;
+        }
     
-     else if (fromitem == "1650 bpi 9-track tape" && toitem == "5.25 floppy disk single-sided, double-density") {
-                   converted=valNum /( 600 *1000/ (46 *10^6));
-         document.getElementById("output").innerHTML = converted;    
-                   document.getElementById("thickness").innerHTML=converted*12.7; } 
+       
+       else if(toitem=="Punched card") {
+           converted = total/80;
+         thickness=converted*0.177852;
+        }
+     
+        else if(toitem=="5.25 floppy disk single-sided, single-density") {
+           converted = total/360000;
+         thickness =converted*1.6;
+        }
+    
+        else if(toitem=="5.25 floppy disk single-sided, double-density") {
+           converted = total/600000;
+          thickness =converted*1.6;
+        }
+       else if(toitem=="5.25 floppy disk double-sided, double-density") {
+           converted = total/1200000;
+         thickness =converted*1.6;
+        }
+    
+      else if(toitem=="6250 bpi 9-track tape") {
+           converted = total/180000000;
+         thickness =converted*12.7;
+        }
+         else if(toitem=="1650 bpi 9-track tape") {
+           converted = total/46000000;
+         thickness =converted*12.7;
+        }
+          else if(toitem=="5 MB hard Winchester Hard Drive") {
+           converted = total/5000000;
+         thickness =converted*5;
+        }
+    
+         else if(toitem=="Paper tape") {
+           converted = total/1200000;
+         thickness =converted*0.1;
+        }
+    
+          else if(toitem=="IBM data cell") {
+           converted = total/3000000000;
+         thickness =converted*0.127;
+        }
+  
+ 
+   }
+            
+            //5.25 floppy disk single-sided, single-density
+             if (fromitem=="5.25 floppy disk single-sided, single-density") {
+
+         total = valNum*360000;
+           if(toitem=="3.5 floppy disk") {
+                      
+           converted =total/1400000;
+          thickness =converted *3.3;
+        }
+    
+       
+       else if(toitem=="Punched card") {
+           converted = total/80;
+         thickness=converted*0.177852;
+        }
+     
+        else if(toitem=="5.25 floppy disk single-sided, single-density") {
+           converted = total/360000;
+         thickness =converted*1.6;
+        }
+    
+        else if(toitem=="5.25 floppy disk single-sided, double-density") {
+           converted = total/600000;
+          thickness =converted*1.6;
+        }
+       else if(toitem=="5.25 floppy disk double-sided, double-density") {
+           converted = total/1200000;
+         thickness =converted*1.6;
+        }
+    
+      else if(toitem=="6250 bpi 9-track tape") {
+           converted = total/180000000;
+         thickness =converted*12.7;
+        }
+         else if(toitem=="1650 bpi 9-track tape") {
+           converted = total/46000000;
+         thickness =converted*12.7;
+        }
+          else if(toitem=="5 MB hard Winchester Hard Drive") {
+           converted = total/5000000;
+         thickness =converted*5;
+        }
+    
+         else if(toitem=="Paper tape") {
+           converted = total/1200000;
+         thickness =converted*0.1;
+        }
+    
+          else if(toitem=="IBM data cell") {
+           converted = total/3000000000;
+         thickness =converted*0.127;
+        }
+  
+ 
+   }  
+           //5.25 floppy disk single-sided, double-density
+                
+             if (fromitem=="5.25 floppy disk single-sided, double-density") {
+
+         total = valNum*600000;
+           if(toitem=="3.5 floppy disk") {
+                      
+           converted =total/1400000;
+          thickness =converted *3.3;
+        }
+    
+       
+       else if(toitem=="Punched card") {
+           converted = total/80;
+         thickness=converted*0.177852;
+        }
+     
+        else if(toitem=="5.25 floppy disk single-sided, single-density") {
+           converted = total/360000;
+         thickness =converted*1.6;
+        }
+    
+        else if(toitem=="5.25 floppy disk single-sided, double-density") {
+           converted = total/600000;
+          thickness =converted*1.6;
+        }
+       else if(toitem=="5.25 floppy disk double-sided, double-density") {
+           converted = total/1200000;
+         thickness =converted*1.6;
+        }
+    
+      else if(toitem=="6250 bpi 9-track tape") {
+           converted = total/180000000;
+         thickness =converted*12.7;
+        }
+         else if(toitem=="1650 bpi 9-track tape") {
+           converted = total/46000000;
+         thickness =converted*12.7;
+        }
+          else if(toitem=="5 MB hard Winchester Hard Drive") {
+           converted = total/5000000;
+         thickness =converted*5;
+        }
+    
+         else if(toitem=="Paper tape") {
+           converted = total/1200000;
+         thickness =converted*0.1;
+        }
+    
+          else if(toitem=="IBM data cell") {
+           converted = total/3000000000;
+         thickness =converted*0.127;
+        }
+  
+ 
+   }  
+            
+            //5.25 floppy disk double-sided, double-density
+            
+                if (fromitem=="5.25 floppy disk double-sided, double-density") {
+
+         total = valNum*1200000;
+           if(toitem=="3.5 floppy disk") {
+                      
+           converted =total/1400000;
+          thickness =converted *3.3;
+        }
+    
+       
+       else if(toitem=="Punched card") {
+           converted = total/80;
+         thickness=converted*0.177852;
+        }
+     
+        else if(toitem=="5.25 floppy disk single-sided, single-density") {
+           converted = total/360000;
+         thickness =converted*1.6;
+        }
+    
+        else if(toitem=="5.25 floppy disk single-sided, double-density") {
+           converted = total/600000;
+          thickness =converted*1.6;
+        }
+       else if(toitem=="5.25 floppy disk double-sided, double-density") {
+           converted = total/1200000;
+         thickness =converted*1.6;
+        }
+    
+      else if(toitem=="6250 bpi 9-track tape") {
+           converted = total/180000000;
+         thickness =converted*12.7;
+        }
+         else if(toitem=="1650 bpi 9-track tape") {
+           converted = total/46000000;
+         thickness =converted*12.7;
+        }
+          else if(toitem=="5 MB hard Winchester Hard Drive") {
+           converted = total/5000000;
+         thickness =converted*5;
+        }
+    
+         else if(toitem=="Paper tape") {
+           converted = total/1200000;
+         thickness =converted*0.1;
+        }
+    
+          else if(toitem=="IBM data cell") {
+           converted = total/3000000000;
+         thickness =converted*0.127;
+        }
+  
+ 
+   }   
+            
+  //6250 track tape
+            
+                if (fromitem=="6250 bpi 9-track tape") {
+
+         total = valNum*180000000;
+           if(toitem=="3.5 floppy disk") {
+                      
+           converted =total/1400000;
+          thickness =converted *3.3;
+        }
+    
+       
+       else if(toitem=="Punched card") {
+           converted = total/80;
+         thickness=converted*0.177852;
+        }
+     
+        else if(toitem=="5.25 floppy disk single-sided, single-density") {
+           converted = total/360000;
+         thickness =converted*1.6;
+        }
+    
+        else if(toitem=="5.25 floppy disk single-sided, double-density") {
+           converted = total/600000;
+          thickness =converted*1.6;
+        }
+       else if(toitem=="5.25 floppy disk double-sided, double-density") {
+           converted = total/1200000;
+         thickness =converted*1.6;
+        }
+    
+      else if(toitem=="6250 bpi 9-track tape") {
+           converted = total/180000000;
+         thickness =converted*12.7;
+        }
+         else if(toitem=="1650 bpi 9-track tape") {
+           converted = total/46000000;
+         thickness =converted*12.7;
+        }
+          else if(toitem=="5 MB hard Winchester Hard Drive") {
+           converted = total/5000000;
+         thickness =converted*5;
+        }
+    
+         else if(toitem=="Paper tape") {
+           converted = total/1200000;
+         thickness =converted*0.1;
+        }
+    
+          else if(toitem=="IBM data cell") {
+           converted = total/3000000000;
+         thickness =converted*0.127;
+        }
+  
+ 
+   }   
+            
+            //1650 track tape
+            
+              if (fromitem=="1650 bpi 9-track tape") {
+
+         total = valNum*46000000;
+           if(toitem=="3.5 floppy disk") {
+                      
+           converted =total/1400000;
+          thickness =converted *3.3;
+        }
+    
+       
+       else if(toitem=="Punched card") {
+           converted = total/80;
+         thickness=converted*0.177852;
+        }
+     
+        else if(toitem=="5.25 floppy disk single-sided, single-density") {
+           converted = total/360000;
+         thickness =converted*1.6;
+        }
+    
+        else if(toitem=="5.25 floppy disk single-sided, double-density") {
+           converted = total/600000;
+          thickness =converted*1.6;
+        }
+       else if(toitem=="5.25 floppy disk double-sided, double-density") {
+           converted = total/1200000;
+         thickness =converted*1.6;
+        }
+    
+      else if(toitem=="6250 bpi 9-track tape") {
+           converted = total/180000000;
+         thickness =converted*12.7;
+        }
+         else if(toitem=="1650 bpi 9-track tape") {
+           converted = total/46000000;
+         thickness =converted*12.7;
+        }
+          else if(toitem=="5 MB hard Winchester Hard Drive") {
+           converted = total/5000000;
+         thickness =converted*5;
+        }
+    
+         else if(toitem=="Paper tape") {
+           converted = total/1200000;
+         thickness =converted*0.1;
+        }
+    
+          else if(toitem=="IBM data cell") {
+           converted = total/3000000000;
+         thickness =converted*0.127;
+        }
+  
+ 
+   }   
+            
+             //5 MB hard Winchester Hard Drive
+            
+              if (fromitem=="5 MB hard Winchester Hard Drive") {
+
+         total = valNum*5000000;
+           if(toitem=="3.5 floppy disk") {
+                      
+           converted =total/1400000;
+          thickness =converted *3.3;
+        }
+    
+       
+       else if(toitem=="Punched card") {
+           converted = total/80;
+         thickness=converted*0.177852;
+        }
+     
+        else if(toitem=="5.25 floppy disk single-sided, single-density") {
+           converted = total/360000;
+         thickness =converted*1.6;
+        }
+    
+        else if(toitem=="5.25 floppy disk single-sided, double-density") {
+           converted = total/600000;
+          thickness =converted*1.6;
+        }
+       else if(toitem=="5.25 floppy disk double-sided, double-density") {
+           converted = total/1200000;
+         thickness =converted*1.6;
+        }
+    
+      else if(toitem=="6250 bpi 9-track tape") {
+           converted = total/180000000;
+         thickness =converted*12.7;
+        }
+         else if(toitem=="1650 bpi 9-track tape") {
+           converted = total/46000000;
+         thickness =converted*12.7;
+        }
+          else if(toitem=="5 MB hard Winchester Hard Drive") {
+           converted = total/5000000;
+         thickness =converted*5;
+        }
+    
+         else if(toitem=="Paper tape") {
+           converted = total/1200000;
+         thickness =converted*0.1;
+        }
+    
+          else if(toitem=="IBM data cell") {
+           converted = total/3000000000;
+         thickness =converted*0.127;
+        }
+  
+ 
+   }   
+            
+            
+            
+             //Paper tape
+            
+              if (fromitem=="Paper tape") {
+
+         total = valNum*1200000;
+           if(toitem=="3.5 floppy disk") {
+                      
+           converted =total/1400000;
+          thickness =converted *3.3;
+        }
+    
+       
+       else if(toitem=="Punched card") {
+           converted = total/80;
+         thickness=converted*0.177852;
+        }
+     
+        else if(toitem=="5.25 floppy disk single-sided, single-density") {
+           converted = total/360000;
+         thickness =converted*1.6;
+        }
+    
+        else if(toitem=="5.25 floppy disk single-sided, double-density") {
+           converted = total/600000;
+          thickness =converted*1.6;
+        }
+       else if(toitem=="5.25 floppy disk double-sided, double-density") {
+           converted = total/1200000;
+         thickness =converted*1.6;
+        }
+    
+      else if(toitem=="6250 bpi 9-track tape") {
+           converted = total/180000000;
+         thickness =converted*12.7;
+        }
+         else if(toitem=="1650 bpi 9-track tape") {
+           converted = total/46000000;
+         thickness =converted*12.7;
+        }
+          else if(toitem=="5 MB hard Winchester Hard Drive") {
+           converted = total/5000000;
+         thickness =converted*5;
+        }
+    
+         else if(toitem=="Paper tape") {
+           converted = total/1200000;
+         thickness =converted*0.1;
+        }
+    
+          else if(toitem=="IBM data cell") {
+           converted = total/3000000000;
+         thickness =converted*0.127;
+        }
+  
+ 
+   }   
+            
+            
+             //IBM data cell
+            
+              if (fromitem=="1650 bpi 9-track tape") {
+
+              total = valNum*1200000;
+           if(toitem=="3.5 floppy disk") {
+                      
+           converted =total/1400000;
+          thickness =converted *3.3;
+        }
+    
+       
+       else if(toitem=="Punched card") {
+           converted = total/80;
+         thickness=converted*0.177852;
+        }
+     
+        else if(toitem=="5.25 floppy disk single-sided, single-density") {
+           converted = total/360000;
+         thickness =converted*1.6;
+        }
+    
+        else if(toitem=="5.25 floppy disk single-sided, double-density") {
+           converted = total/600000;
+          thickness =converted*1.6;
+        }
+       else if(toitem=="5.25 floppy disk double-sided, double-density") {
+           converted = total/1200000;
+         thickness =converted*1.6;
+        }
+    
+      else if(toitem=="6250 bpi 9-track tape") {
+           converted = total/180000000;
+         thickness =converted*12.7;
+        }
+         else if(toitem=="1650 bpi 9-track tape") {
+           converted = total/46000000;
+         thickness =converted*12.7;
+        }
+          else if(toitem=="5 MB hard Winchester Hard Drive") {
+           converted = total/5000000;
+         thickness =converted*5;
+        }
+    
+         else if(toitem=="Paper tape") {
+           converted = total/1200000;
+         thickness =converted*0.1;
+        }
+    
+          else if(toitem=="IBM data cell") {
+           converted = total/3000000000;
+         thickness =converted*0.127;
+        }
+  
+ 
+   }   
+            
+            document.getElementById("output").innerHTML = converted;
+           document.getElementById("thickness").innerHTML = thickness;
         
-     else if (fromitem == "1650 bpi 9-track tape" && toitem == "5.25 floppy disk single-sided, single-density") {
-                   converted=valNum /( 360 *1000/ (46 *10^6));
-         document.getElementById("output").innerHTML = converted;    
-                   document.getElementById("thickness").innerHTML=converted*12.7; } 
-    else if (fromitem == "1650 bpi 9-track tape" && toitem == "5.25 floppy disk double-sided, double-density") {
-                   converted=valNum /( 1.2 *1000000/ (46 *10^6));
-        document.getElementById("output").innerHTML = converted;    
-                   document.getElementById("thickness").innerHTML=converted*12.7; } 
-        else if (fromitem == "1650 bpi 9-track tape" && toitem == "6250 bpi 9-track tape") {
-                   converted=valNum /( 180 *10^6 / (46 *10^6));
-            document.getElementById("output").innerHTML = converted;    
-                   document.getElementById("thickness").innerHTML=converted*12.7; } 
-            else if (fromitem == "1650 bpi 9-track tape" && toitem == "Paper tape") {
-                   converted=valNum /( 180 *10^6 / (46 *10^6));
-                document.getElementById("output").innerHTML = converted;    
-                   document.getElementById("thickness").innerHTML=converted*12.7; } 
-    
-                else if (fromitem == "1650 bpi 9-track tape" && toitem == "IBM Data Cell") {
-                   converted=valNum /(3*10^9 / (46 *10^6));
-                    document.getElementById("output").innerHTML = converted;    
-                   document.getElementById("thickness").innerHTML=converted*12.7; } 
-    
-    
-        else if (fromitem == "1650 bpi 9-track tape" && toitem == "5 MB hard Winchester Hard Drive") {
-                   converted=valNum /(5 *10^6 / (46 *10^6));
-                    document.getElementById("output").innerHTML = converted;    
-                   document.getElementById("thickness").innerHTML=converted*12.7; } 
-    
-    
-    
-        else{
-  document.getElementById("output").innerHTML='';} 
-    
-}
+        }
+        
     
 </script>
          <script type="text/javascript" class="">
